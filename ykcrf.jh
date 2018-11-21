@@ -1,0 +1,124 @@
+entity Etude {
+	code String required
+    titre String required
+    description String
+    pageHtml String
+    cssGlobal String
+}
+entity FormulaireTemplate {
+	code String required
+    titre String required
+    version String
+}
+paginate FormulaireTemplate with pagination
+entity ComposantTemplate {
+	code String required
+    titre String required
+    ordre Integer required
+    conditionAffichage String
+    texteDroite String
+    cssStyle String
+}
+paginate ComposantTemplate with pagination
+entity TypeComposant {
+	code String required
+    titre String required
+    cssStyle String
+}
+paginate TypeComposant with pagination
+
+entity ValidationComposant {
+	code String required
+    titre String required
+    
+    regexValidation String
+    signeComparaison String
+    valeurComparaison String
+    message String
+    niveauValidation NiveauValidation
+}
+paginate ValidationComposant with pagination
+entity RegleValidation {
+	code String required
+    titre String required
+    regexValidation String
+    signeComparaison String
+    message String
+}
+paginate RegleValidation with pagination
+
+entity Requette {
+    etat EtatRequette
+}
+paginate Requette with pagination
+entity CommentaireRequette {
+	commentaire String
+}
+paginate CommentaireRequette with pagination
+
+entity FichePatient {
+	codePatient String
+    oneDate Instant
+}
+paginate FichePatient with pagination
+entity FormulairePatient {
+	etat EtatFormulaire
+}
+entity ComposantValeur {
+	valeur String
+    etat EtatValeur
+}
+entity Centre {
+	code String
+    titre String
+    complement String
+}
+paginate Centre with pagination
+entity Ville {
+	titre String
+}
+entity Region {
+	titre String
+}
+entity SousRegion {
+	titre String
+}
+paginate Ville, Region, SousRegion with pagination
+relationship OneToMany {
+	FormulaireTemplate{composantTemplate} to ComposantTemplate,
+	ComposantTemplate{validationComposant} to ValidationComposant,
+	ComposantTemplate{sousComposant} to ComposantTemplate,
+    FormulairePatient{composantValeur} to ComposantValeur,
+    FichePatient{formulairePatient} to FormulairePatient,
+    Requette{commentaireRequette} to CommentaireRequette,
+    Ville{region} to Region,
+    Region{sousRegion} to SousRegion,
+}
+relationship OneToOne {
+	ComposantTemplate{typeComposant} to TypeComposant,
+	ValidationComposant{regleValidation} to RegleValidation,
+    FormulairePatient{formulaireTemplate} to FormulaireTemplate,
+    ComposantValeur{composantTemplate} to ComposantTemplate,
+    FichePatient{centre} to Centre,
+    Requette{composantValeur} to ComposantValeur,
+    Requette{validationComposant} to ValidationComposant,
+    Centre{ville} to Ville,
+    Centre{region} to Region,
+    Centre{sousRegion} to SousRegion,
+}
+service all with serviceImpl
+dto * with mapstruct
+
+enum NiveauValidation {
+	WARNING, INFO, ERROR
+}
+enum EtatFormulaire {
+	ND, COMPLETED, QUERIES, SIGNED
+}
+enum EtatValeur {
+	ND, COMPLETED, QUERIES
+}
+enum EtatRequette {
+	COMMENTED, RESOLVED
+}
+
