@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity FormulairePatient.
+    -->
+    <changeSet id="20181121143228-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="fiche_patient_id"
+                                 baseTableName="formulaire_patient"
+                                 constraintName="fk_formulaire_patient_fiche_patient_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="fiche_patient"/>
+
+        <addForeignKeyConstraint baseColumnNames="formulaire_template_id"
+                                 baseTableName="formulaire_patient"
+                                 constraintName="fk_formulaire_patient_formulaire_template_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="formulaire_template"/>
+
+    </changeSet>
+</databaseChangeLog>

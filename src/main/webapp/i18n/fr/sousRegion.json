@@ -1,0 +1,22 @@
+{
+    "ykCrfApp": {
+        "sousRegion": {
+            "home": {
+                "title": "SousRegions",
+                "createLabel": "Créer un nouveau Sous Region",
+                "createOrEditLabel": "Créer ou éditer un Sous Region"
+            },
+            "created": "Un nouveau Sous Region a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Sous Region avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Sous Region avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Sous Region {{ id }} ?"
+            },
+            "detail": {
+                "title": "Sous Region"
+            },
+            "titre": "Titre",
+            "region": "Region"
+        }
+    }
+}

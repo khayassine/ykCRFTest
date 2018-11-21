@@ -1,0 +1,65 @@
+{
+    "name": "ValidationComposant",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "titre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "regexValidation",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "signeComparaison",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "valeurComparaison",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "message",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "niveauValidation",
+            "fieldType": "NiveauValidation",
+            "fieldValues": "WARNING,INFO,ERROR"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "composantTemplate",
+            "otherEntityName": "composantTemplate",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "regleValidation",
+            "otherEntityName": "regleValidation",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "validationComposant"
+        }
+    ],
+    "changelogDate": "20181121143223",
+    "entityTableName": "validation_composant",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

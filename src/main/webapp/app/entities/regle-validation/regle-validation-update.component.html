@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-regle-validation-heading" jhiTranslate="ykCrfApp.regleValidation.home.createOrEditLabel">Create or edit a Regle Validation</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!regleValidation.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="regleValidation.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.regleValidation.code" for="field_code">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                        [(ngModel)]="regleValidation.code" required/>
+                    <div [hidden]="!(editForm.controls.code?.dirty && editForm.controls.code?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.code?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.regleValidation.titre" for="field_titre">Titre</label>
+                    <input type="text" class="form-control" name="titre" id="field_titre"
+                        [(ngModel)]="regleValidation.titre" required/>
+                    <div [hidden]="!(editForm.controls.titre?.dirty && editForm.controls.titre?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.titre?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.regleValidation.regexValidation" for="field_regexValidation">Regex Validation</label>
+                    <input type="text" class="form-control" name="regexValidation" id="field_regexValidation"
+                        [(ngModel)]="regleValidation.regexValidation" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.regleValidation.signeComparaison" for="field_signeComparaison">Signe Comparaison</label>
+                    <input type="text" class="form-control" name="signeComparaison" id="field_signeComparaison"
+                        [(ngModel)]="regleValidation.signeComparaison" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.regleValidation.message" for="field_message">Message</label>
+                    <input type="text" class="form-control" name="message" id="field_message"
+                        [(ngModel)]="regleValidation.message" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

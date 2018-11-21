@@ -1,0 +1,24 @@
+{
+    "ykCrfApp": {
+        "formulaireTemplate": {
+            "home": {
+                "title": "Formulaire Templates",
+                "createLabel": "Create a new Formulaire Template",
+                "createOrEditLabel": "Create or edit a Formulaire Template"
+            },
+            "created": "A new Formulaire Template is created with identifier {{ param }}",
+            "updated": "A Formulaire Template is updated with identifier {{ param }}",
+            "deleted": "A Formulaire Template is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Formulaire Template {{ id }}?"
+            },
+            "detail": {
+                "title": "Formulaire Template"
+            },
+            "code": "Code",
+            "titre": "Titre",
+            "version": "Version",
+            "composantTemplate": "Composant Template"
+        }
+    }
+}

@@ -1,0 +1,97 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-composant-template-heading" jhiTranslate="ykCrfApp.composantTemplate.home.createOrEditLabel">Create or edit a Composant Template</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!composantTemplate.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="composantTemplate.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.composantTemplate.code" for="field_code">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                        [(ngModel)]="composantTemplate.code" required/>
+                    <div [hidden]="!(editForm.controls.code?.dirty && editForm.controls.code?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.code?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.composantTemplate.titre" for="field_titre">Titre</label>
+                    <input type="text" class="form-control" name="titre" id="field_titre"
+                        [(ngModel)]="composantTemplate.titre" required/>
+                    <div [hidden]="!(editForm.controls.titre?.dirty && editForm.controls.titre?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.titre?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.composantTemplate.ordre" for="field_ordre">Ordre</label>
+                    <input type="number" class="form-control" name="ordre" id="field_ordre"
+                        [(ngModel)]="composantTemplate.ordre" required/>
+                    <div [hidden]="!(editForm.controls.ordre?.dirty && editForm.controls.ordre?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.ordre?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.ordre?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.composantTemplate.conditionAffichage" for="field_conditionAffichage">Condition Affichage</label>
+                    <input type="text" class="form-control" name="conditionAffichage" id="field_conditionAffichage"
+                        [(ngModel)]="composantTemplate.conditionAffichage" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.composantTemplate.texteDroite" for="field_texteDroite">Texte Droite</label>
+                    <input type="text" class="form-control" name="texteDroite" id="field_texteDroite"
+                        [(ngModel)]="composantTemplate.texteDroite" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.composantTemplate.cssStyle" for="field_cssStyle">Css Style</label>
+                    <input type="text" class="form-control" name="cssStyle" id="field_cssStyle"
+                        [(ngModel)]="composantTemplate.cssStyle" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.composantTemplate.formulaireTemplate" for="field_formulaireTemplate">Formulaire Template</label>
+                    <select class="form-control" id="field_formulaireTemplate" name="formulaireTemplate" [(ngModel)]="composantTemplate.formulaireTemplateId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="formulaireTemplateOption.id" *ngFor="let formulaireTemplateOption of formulairetemplates; trackBy: trackFormulaireTemplateById">{{formulaireTemplateOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.composantTemplate.typeComposant" for="field_typeComposant">Type Composant</label>
+                    <select class="form-control" id="field_typeComposant" name="typeComposant" [(ngModel)]="composantTemplate.typeComposantId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="typeComposantOption.id" *ngFor="let typeComposantOption of typecomposants; trackBy: trackTypeComposantById">{{typeComposantOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.composantTemplate.composantTemplate" for="field_composantTemplate">Composant Template</label>
+                    <select class="form-control" id="field_composantTemplate" name="composantTemplate" [(ngModel)]="composantTemplate.composantTemplateId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="composantTemplateOption.id" *ngFor="let composantTemplateOption of composanttemplates; trackBy: trackComposantTemplateById">{{composantTemplateOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

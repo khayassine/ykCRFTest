@@ -1,0 +1,52 @@
+{
+    "name": "Centre",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "titre",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "complement",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "ville",
+            "otherEntityName": "ville",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "centre"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "region",
+            "otherEntityName": "region",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "centre"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "sousRegion",
+            "otherEntityName": "sousRegion",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "centre"
+        }
+    ],
+    "changelogDate": "20181121143230",
+    "entityTableName": "centre",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

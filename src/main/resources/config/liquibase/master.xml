@@ -5,6 +5,31 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143219_added_entity_Etude.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143220_added_entity_FormulaireTemplate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143221_added_entity_ComposantTemplate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143222_added_entity_TypeComposant.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143223_added_entity_ValidationComposant.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143224_added_entity_RegleValidation.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143225_added_entity_Requette.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143226_added_entity_CommentaireRequette.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143227_added_entity_FichePatient.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143228_added_entity_FormulairePatient.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143229_added_entity_ComposantValeur.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143230_added_entity_Centre.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143231_added_entity_Ville.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143232_added_entity_Region.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143233_added_entity_SousRegion.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20181121143221_added_entity_constraints_ComposantTemplate.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143223_added_entity_constraints_ValidationComposant.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143225_added_entity_constraints_Requette.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143226_added_entity_constraints_CommentaireRequette.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143227_added_entity_constraints_FichePatient.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143228_added_entity_constraints_FormulairePatient.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143229_added_entity_constraints_ComposantValeur.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143230_added_entity_constraints_Centre.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143232_added_entity_constraints_Region.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20181121143233_added_entity_constraints_SousRegion.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

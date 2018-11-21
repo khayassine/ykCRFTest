@@ -1,0 +1,31 @@
+{
+    "ykCrfApp": {
+        "composantTemplate": {
+            "home": {
+                "title": "ComposantTemplates",
+                "createLabel": "Créer un nouveau Composant Template",
+                "createOrEditLabel": "Créer ou éditer un Composant Template"
+            },
+            "created": "Un nouveau Composant Template a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Composant Template avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Composant Template avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Composant Template {{ id }} ?"
+            },
+            "detail": {
+                "title": "Composant Template"
+            },
+            "code": "Code",
+            "titre": "Titre",
+            "ordre": "Ordre",
+            "conditionAffichage": "Condition Affichage",
+            "texteDroite": "Texte Droite",
+            "cssStyle": "Css Style",
+            "formulaireTemplate": "Formulaire Template",
+            "typeComposant": "Type Composant",
+            "validationComposant": "Validation Composant",
+            "composantTemplate": "Composant Template",
+            "sousComposant": "Sous Composant"
+        }
+    }
+}

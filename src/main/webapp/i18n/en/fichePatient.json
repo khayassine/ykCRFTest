@@ -1,0 +1,24 @@
+{
+    "ykCrfApp": {
+        "fichePatient": {
+            "home": {
+                "title": "Fiche Patients",
+                "createLabel": "Create a new Fiche Patient",
+                "createOrEditLabel": "Create or edit a Fiche Patient"
+            },
+            "created": "A new Fiche Patient is created with identifier {{ param }}",
+            "updated": "A Fiche Patient is updated with identifier {{ param }}",
+            "deleted": "A Fiche Patient is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Fiche Patient {{ id }}?"
+            },
+            "detail": {
+                "title": "Fiche Patient"
+            },
+            "codePatient": "Code Patient",
+            "oneDate": "One Date",
+            "centre": "Centre",
+            "formulairePatient": "Formulaire Patient"
+        }
+    }
+}

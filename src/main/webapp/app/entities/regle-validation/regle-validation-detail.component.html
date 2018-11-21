@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="regleValidation">
+            <h2><span jhiTranslate="ykCrfApp.regleValidation.detail.title">Regle Validation</span> {{regleValidation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ykCrfApp.regleValidation.code">Code</span></dt>
+                <dd>
+                    <span>{{regleValidation.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.regleValidation.titre">Titre</span></dt>
+                <dd>
+                    <span>{{regleValidation.titre}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.regleValidation.regexValidation">Regex Validation</span></dt>
+                <dd>
+                    <span>{{regleValidation.regexValidation}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.regleValidation.signeComparaison">Signe Comparaison</span></dt>
+                <dd>
+                    <span>{{regleValidation.signeComparaison}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.regleValidation.message">Message</span></dt>
+                <dd>
+                    <span>{{regleValidation.message}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/regle-validation', regleValidation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

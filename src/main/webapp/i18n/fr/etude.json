@@ -1,0 +1,25 @@
+{
+    "ykCrfApp": {
+        "etude": {
+            "home": {
+                "title": "Etudes",
+                "createLabel": "Créer un nouveau Etude",
+                "createOrEditLabel": "Créer ou éditer un Etude"
+            },
+            "created": "Un nouveau Etude a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Etude avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Etude avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Etude {{ id }} ?"
+            },
+            "detail": {
+                "title": "Etude"
+            },
+            "code": "Code",
+            "titre": "Titre",
+            "description": "Description",
+            "pageHtml": "Page Html",
+            "cssGlobal": "Css Global"
+        }
+    }
+}

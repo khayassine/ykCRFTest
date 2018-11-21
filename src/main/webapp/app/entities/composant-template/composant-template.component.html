@@ -1,0 +1,90 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ykCrfApp.composantTemplate.home.title">Composant Templates</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-composant-template" [routerLink]="['/composant-template/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ykCrfApp.composantTemplate.home.createLabel">
+            Create new Composant Template
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="composantTemplates">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="code"><span jhiTranslate="ykCrfApp.composantTemplate.code">Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="titre"><span jhiTranslate="ykCrfApp.composantTemplate.titre">Titre</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="ordre"><span jhiTranslate="ykCrfApp.composantTemplate.ordre">Ordre</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="conditionAffichage"><span jhiTranslate="ykCrfApp.composantTemplate.conditionAffichage">Condition Affichage</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="texteDroite"><span jhiTranslate="ykCrfApp.composantTemplate.texteDroite">Texte Droite</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="cssStyle"><span jhiTranslate="ykCrfApp.composantTemplate.cssStyle">Css Style</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="formulaireTemplateId"><span jhiTranslate="ykCrfApp.composantTemplate.formulaireTemplate">Formulaire Template</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="typeComposantId"><span jhiTranslate="ykCrfApp.composantTemplate.typeComposant">Type Composant</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="composantTemplateId"><span jhiTranslate="ykCrfApp.composantTemplate.composantTemplate">Composant Template</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let composantTemplate of composantTemplates ;trackBy: trackId">
+                <td><a [routerLink]="['/composant-template', composantTemplate.id, 'view' ]">{{composantTemplate.id}}</a></td>
+                <td>{{composantTemplate.code}}</td>
+                <td>{{composantTemplate.titre}}</td>
+                <td>{{composantTemplate.ordre}}</td>
+                <td>{{composantTemplate.conditionAffichage}}</td>
+                <td>{{composantTemplate.texteDroite}}</td>
+                <td>{{composantTemplate.cssStyle}}</td>
+                <td>
+                    <div *ngIf="composantTemplate.formulaireTemplateId">
+                        <a [routerLink]="['../formulaire-template', composantTemplate.formulaireTemplateId , 'view' ]" >{{composantTemplate.formulaireTemplateId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="composantTemplate.typeComposantId">
+                        <a [routerLink]="['../type-composant', composantTemplate.typeComposantId , 'view' ]" >{{composantTemplate.typeComposantId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="composantTemplate.composantTemplateId">
+                        <a [routerLink]="['../composant-template', composantTemplate.composantTemplateId , 'view' ]" >{{composantTemplate.composantTemplateId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/composant-template', composantTemplate.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/composant-template', composantTemplate.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'composant-template/'+ composantTemplate.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="composantTemplates && composantTemplates.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

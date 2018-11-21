@@ -1,0 +1,88 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-validation-composant-heading" jhiTranslate="ykCrfApp.validationComposant.home.createOrEditLabel">Create or edit a Validation Composant</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!validationComposant.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="validationComposant.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.validationComposant.code" for="field_code">Code</label>
+                    <input type="text" class="form-control" name="code" id="field_code"
+                        [(ngModel)]="validationComposant.code" required/>
+                    <div [hidden]="!(editForm.controls.code?.dirty && editForm.controls.code?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.code?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.validationComposant.titre" for="field_titre">Titre</label>
+                    <input type="text" class="form-control" name="titre" id="field_titre"
+                        [(ngModel)]="validationComposant.titre" required/>
+                    <div [hidden]="!(editForm.controls.titre?.dirty && editForm.controls.titre?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.titre?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.validationComposant.regexValidation" for="field_regexValidation">Regex Validation</label>
+                    <input type="text" class="form-control" name="regexValidation" id="field_regexValidation"
+                        [(ngModel)]="validationComposant.regexValidation" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.validationComposant.signeComparaison" for="field_signeComparaison">Signe Comparaison</label>
+                    <input type="text" class="form-control" name="signeComparaison" id="field_signeComparaison"
+                        [(ngModel)]="validationComposant.signeComparaison" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.validationComposant.valeurComparaison" for="field_valeurComparaison">Valeur Comparaison</label>
+                    <input type="text" class="form-control" name="valeurComparaison" id="field_valeurComparaison"
+                        [(ngModel)]="validationComposant.valeurComparaison" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.validationComposant.message" for="field_message">Message</label>
+                    <input type="text" class="form-control" name="message" id="field_message"
+                        [(ngModel)]="validationComposant.message" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.validationComposant.niveauValidation" for="field_niveauValidation">Niveau Validation</label>
+                    <select class="form-control" name="niveauValidation" [(ngModel)]="validationComposant.niveauValidation" id="field_niveauValidation" >
+                        <option value="WARNING">{{'ykCrfApp.NiveauValidation.WARNING' | translate}}</option>
+                        <option value="INFO">{{'ykCrfApp.NiveauValidation.INFO' | translate}}</option>
+                        <option value="ERROR">{{'ykCrfApp.NiveauValidation.ERROR' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.validationComposant.composantTemplate" for="field_composantTemplate">Composant Template</label>
+                    <select class="form-control" id="field_composantTemplate" name="composantTemplate" [(ngModel)]="validationComposant.composantTemplateId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="composantTemplateOption.id" *ngFor="let composantTemplateOption of composanttemplates; trackBy: trackComposantTemplateById">{{composantTemplateOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.validationComposant.regleValidation" for="field_regleValidation">Regle Validation</label>
+                    <select class="form-control" id="field_regleValidation" name="regleValidation" [(ngModel)]="validationComposant.regleValidationId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="regleValidationOption.id" *ngFor="let regleValidationOption of reglevalidations; trackBy: trackRegleValidationById">{{regleValidationOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

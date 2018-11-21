@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Requette.
+    -->
+    <changeSet id="20181121143225-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="composant_valeur_id"
+                                 baseTableName="requette"
+                                 constraintName="fk_requette_composant_valeur_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="composant_valeur"/>
+
+        <addForeignKeyConstraint baseColumnNames="validation_composant_id"
+                                 baseTableName="requette"
+                                 constraintName="fk_requette_validation_composant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="validation_composant"/>
+
+    </changeSet>
+</databaseChangeLog>

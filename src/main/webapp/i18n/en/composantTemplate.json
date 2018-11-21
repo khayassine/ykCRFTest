@@ -1,0 +1,31 @@
+{
+    "ykCrfApp": {
+        "composantTemplate": {
+            "home": {
+                "title": "Composant Templates",
+                "createLabel": "Create a new Composant Template",
+                "createOrEditLabel": "Create or edit a Composant Template"
+            },
+            "created": "A new Composant Template is created with identifier {{ param }}",
+            "updated": "A Composant Template is updated with identifier {{ param }}",
+            "deleted": "A Composant Template is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Composant Template {{ id }}?"
+            },
+            "detail": {
+                "title": "Composant Template"
+            },
+            "code": "Code",
+            "titre": "Titre",
+            "ordre": "Ordre",
+            "conditionAffichage": "Condition Affichage",
+            "texteDroite": "Texte Droite",
+            "cssStyle": "Css Style",
+            "formulaireTemplate": "Formulaire Template",
+            "typeComposant": "Type Composant",
+            "validationComposant": "Validation Composant",
+            "composantTemplate": "Composant Template",
+            "sousComposant": "Sous Composant"
+        }
+    }
+}

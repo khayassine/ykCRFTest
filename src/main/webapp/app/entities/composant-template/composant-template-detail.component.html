@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="composantTemplate">
+            <h2><span jhiTranslate="ykCrfApp.composantTemplate.detail.title">Composant Template</span> {{composantTemplate.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ykCrfApp.composantTemplate.code">Code</span></dt>
+                <dd>
+                    <span>{{composantTemplate.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.composantTemplate.titre">Titre</span></dt>
+                <dd>
+                    <span>{{composantTemplate.titre}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.composantTemplate.ordre">Ordre</span></dt>
+                <dd>
+                    <span>{{composantTemplate.ordre}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.composantTemplate.conditionAffichage">Condition Affichage</span></dt>
+                <dd>
+                    <span>{{composantTemplate.conditionAffichage}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.composantTemplate.texteDroite">Texte Droite</span></dt>
+                <dd>
+                    <span>{{composantTemplate.texteDroite}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.composantTemplate.cssStyle">Css Style</span></dt>
+                <dd>
+                    <span>{{composantTemplate.cssStyle}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.composantTemplate.formulaireTemplate">Formulaire Template</span></dt>
+                <dd>
+                    <div *ngIf="composantTemplate.formulaireTemplateId">
+                        <a [routerLink]="['/formulaire-template', composantTemplate.formulaireTemplateId, 'view']">{{composantTemplate.formulaireTemplateId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.composantTemplate.typeComposant">Type Composant</span></dt>
+                <dd>
+                    <div *ngIf="composantTemplate.typeComposantId">
+                        <a [routerLink]="['/type-composant', composantTemplate.typeComposantId, 'view']">{{composantTemplate.typeComposantId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.composantTemplate.composantTemplate">Composant Template</span></dt>
+                <dd>
+                    <div *ngIf="composantTemplate.composantTemplateId">
+                        <a [routerLink]="['/composant-template', composantTemplate.composantTemplateId, 'view']">{{composantTemplate.composantTemplateId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/composant-template', composantTemplate.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

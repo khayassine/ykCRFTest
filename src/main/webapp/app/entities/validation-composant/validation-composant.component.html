@@ -1,0 +1,86 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ykCrfApp.validationComposant.home.title">Validation Composants</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-validation-composant" [routerLink]="['/validation-composant/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ykCrfApp.validationComposant.home.createLabel">
+            Create new Validation Composant
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="validationComposants">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="code"><span jhiTranslate="ykCrfApp.validationComposant.code">Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="titre"><span jhiTranslate="ykCrfApp.validationComposant.titre">Titre</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="regexValidation"><span jhiTranslate="ykCrfApp.validationComposant.regexValidation">Regex Validation</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="signeComparaison"><span jhiTranslate="ykCrfApp.validationComposant.signeComparaison">Signe Comparaison</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="valeurComparaison"><span jhiTranslate="ykCrfApp.validationComposant.valeurComparaison">Valeur Comparaison</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="message"><span jhiTranslate="ykCrfApp.validationComposant.message">Message</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="niveauValidation"><span jhiTranslate="ykCrfApp.validationComposant.niveauValidation">Niveau Validation</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="composantTemplateId"><span jhiTranslate="ykCrfApp.validationComposant.composantTemplate">Composant Template</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="regleValidationId"><span jhiTranslate="ykCrfApp.validationComposant.regleValidation">Regle Validation</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let validationComposant of validationComposants ;trackBy: trackId">
+                <td><a [routerLink]="['/validation-composant', validationComposant.id, 'view' ]">{{validationComposant.id}}</a></td>
+                <td>{{validationComposant.code}}</td>
+                <td>{{validationComposant.titre}}</td>
+                <td>{{validationComposant.regexValidation}}</td>
+                <td>{{validationComposant.signeComparaison}}</td>
+                <td>{{validationComposant.valeurComparaison}}</td>
+                <td>{{validationComposant.message}}</td>
+                <td jhiTranslate="{{'ykCrfApp.NiveauValidation.' + validationComposant.niveauValidation}}">{{validationComposant.niveauValidation}}</td>
+                <td>
+                    <div *ngIf="validationComposant.composantTemplateId">
+                        <a [routerLink]="['../composant-template', validationComposant.composantTemplateId , 'view' ]" >{{validationComposant.composantTemplateId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="validationComposant.regleValidationId">
+                        <a [routerLink]="['../regle-validation', validationComposant.regleValidationId , 'view' ]" >{{validationComposant.regleValidationId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/validation-composant', validationComposant.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/validation-composant', validationComposant.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'validation-composant/'+ validationComposant.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="validationComposants && validationComposants.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

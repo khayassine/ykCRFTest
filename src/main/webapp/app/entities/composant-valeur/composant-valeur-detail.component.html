@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="composantValeur">
+            <h2><span jhiTranslate="ykCrfApp.composantValeur.detail.title">Composant Valeur</span> {{composantValeur.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ykCrfApp.composantValeur.valeur">Valeur</span></dt>
+                <dd>
+                    <span>{{composantValeur.valeur}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.composantValeur.etat">Etat</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'ykCrfApp.EtatValeur.' + composantValeur.etat}}">{{composantValeur.etat}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.composantValeur.formulairePatient">Formulaire Patient</span></dt>
+                <dd>
+                    <div *ngIf="composantValeur.formulairePatientId">
+                        <a [routerLink]="['/formulaire-patient', composantValeur.formulairePatientId, 'view']">{{composantValeur.formulairePatientId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.composantValeur.composantTemplate">Composant Template</span></dt>
+                <dd>
+                    <div *ngIf="composantValeur.composantTemplateId">
+                        <a [routerLink]="['/composant-template', composantValeur.composantTemplateId, 'view']">{{composantValeur.composantTemplateId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/composant-valeur', composantValeur.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

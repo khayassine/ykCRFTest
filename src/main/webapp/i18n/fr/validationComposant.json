@@ -1,0 +1,29 @@
+{
+    "ykCrfApp": {
+        "validationComposant": {
+            "home": {
+                "title": "ValidationComposants",
+                "createLabel": "Créer un nouveau Validation Composant",
+                "createOrEditLabel": "Créer ou éditer un Validation Composant"
+            },
+            "created": "Un nouveau Validation Composant a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Validation Composant avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Validation Composant avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Validation Composant {{ id }} ?"
+            },
+            "detail": {
+                "title": "Validation Composant"
+            },
+            "code": "Code",
+            "titre": "Titre",
+            "regexValidation": "Regex Validation",
+            "signeComparaison": "Signe Comparaison",
+            "valeurComparaison": "Valeur Comparaison",
+            "message": "Message",
+            "niveauValidation": "Niveau Validation",
+            "composantTemplate": "Composant Template",
+            "regleValidation": "Regle Validation"
+        }
+    }
+}

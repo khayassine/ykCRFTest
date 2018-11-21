@@ -1,0 +1,41 @@
+{
+    "name": "FormulairePatient",
+    "fields": [
+        {
+            "fieldName": "etat",
+            "fieldType": "EtatFormulaire",
+            "fieldValues": "ND,COMPLETED,QUERIES,SIGNED"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "fichePatient",
+            "otherEntityName": "fichePatient",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "formulaireTemplate",
+            "otherEntityName": "formulaireTemplate",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "formulairePatient"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "composantValeur",
+            "otherEntityName": "composantValeur",
+            "otherEntityRelationshipName": "formulairePatient"
+        }
+    ],
+    "changelogDate": "20181121143228",
+    "entityTableName": "formulaire_patient",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

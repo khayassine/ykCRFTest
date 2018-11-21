@@ -1,0 +1,81 @@
+{
+    "name": "ComposantTemplate",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "titre",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "ordre",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "conditionAffichage",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "texteDroite",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cssStyle",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "formulaireTemplate",
+            "otherEntityName": "formulaireTemplate",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "typeComposant",
+            "otherEntityName": "typeComposant",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "composantTemplate"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "validationComposant",
+            "otherEntityName": "validationComposant",
+            "otherEntityRelationshipName": "composantTemplate"
+        },
+        {
+            "relationshipName": "composantTemplate",
+            "otherEntityName": "composantTemplate",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "sousComposant",
+            "otherEntityName": "composantTemplate",
+            "otherEntityRelationshipName": "composantTemplate"
+        }
+    ],
+    "changelogDate": "20181121143221",
+    "entityTableName": "composant_template",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

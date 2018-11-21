@@ -1,0 +1,39 @@
+{
+    "name": "ComposantValeur",
+    "fields": [
+        {
+            "fieldName": "valeur",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "etat",
+            "fieldType": "EtatValeur",
+            "fieldValues": "ND,COMPLETED,QUERIES"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "formulairePatient",
+            "otherEntityName": "formulairePatient",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "composantTemplate",
+            "otherEntityName": "composantTemplate",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "composantValeur"
+        }
+    ],
+    "changelogDate": "20181121143229",
+    "entityTableName": "composant_valeur",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
