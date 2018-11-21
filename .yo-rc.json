@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "ykCRF",
+    "packageName": "ma.kayas.cro.ykcrf",
+    "packageFolder": "ma/kayas/cro/ykcrf",
+    "serverPort": 8080,
+    "serviceDiscoveryType": false,
+    "authenticationType": "session",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "fr"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.7.0",
+    "rememberMeKey": "82a64c6e62b84f33780f8c1b0ddfe10248f09fce1a69f534b4a08c3a70dbc2e4ec8cf981eb245cd47639c2e55df3ffb3c50e",
+    "otherModules": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "khayassine",
+  "repository-name": "ykCRFTest"
+}
