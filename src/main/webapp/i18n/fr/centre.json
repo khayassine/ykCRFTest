@@ -1,0 +1,26 @@
+{
+    "ykCrfApp": {
+        "centre": {
+            "home": {
+                "title": "Centres",
+                "createLabel": "Créer un nouveau Centre",
+                "createOrEditLabel": "Créer ou éditer un Centre"
+            },
+            "created": "Un nouveau Centre a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Centre avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Centre avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Centre {{ id }} ?"
+            },
+            "detail": {
+                "title": "Centre"
+            },
+            "code": "Code",
+            "titre": "Titre",
+            "complement": "Complement",
+            "ville": "Ville",
+            "region": "Region",
+            "sousRegion": "Sous Region"
+        }
+    }
+}

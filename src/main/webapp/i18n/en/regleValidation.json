@@ -1,0 +1,25 @@
+{
+    "ykCrfApp": {
+        "regleValidation": {
+            "home": {
+                "title": "Regle Validations",
+                "createLabel": "Create a new Regle Validation",
+                "createOrEditLabel": "Create or edit a Regle Validation"
+            },
+            "created": "A new Regle Validation is created with identifier {{ param }}",
+            "updated": "A Regle Validation is updated with identifier {{ param }}",
+            "deleted": "A Regle Validation is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Regle Validation {{ id }}?"
+            },
+            "detail": {
+                "title": "Regle Validation"
+            },
+            "code": "Code",
+            "titre": "Titre",
+            "regexValidation": "Regex Validation",
+            "signeComparaison": "Signe Comparaison",
+            "message": "Message"
+        }
+    }
+}

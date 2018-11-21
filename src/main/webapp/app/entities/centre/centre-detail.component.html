@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="centre">
+            <h2><span jhiTranslate="ykCrfApp.centre.detail.title">Centre</span> {{centre.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ykCrfApp.centre.code">Code</span></dt>
+                <dd>
+                    <span>{{centre.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.centre.titre">Titre</span></dt>
+                <dd>
+                    <span>{{centre.titre}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.centre.complement">Complement</span></dt>
+                <dd>
+                    <span>{{centre.complement}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.centre.ville">Ville</span></dt>
+                <dd>
+                    <div *ngIf="centre.villeId">
+                        <a [routerLink]="['/ville', centre.villeId, 'view']">{{centre.villeId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.centre.region">Region</span></dt>
+                <dd>
+                    <div *ngIf="centre.regionId">
+                        <a [routerLink]="['/region', centre.regionId, 'view']">{{centre.regionId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.centre.sousRegion">Sous Region</span></dt>
+                <dd>
+                    <div *ngIf="centre.sousRegionId">
+                        <a [routerLink]="['/sous-region', centre.sousRegionId, 'view']">{{centre.sousRegionId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/centre', centre.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

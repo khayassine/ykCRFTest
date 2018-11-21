@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="requette">
+            <h2><span jhiTranslate="ykCrfApp.requette.detail.title">Requette</span> {{requette.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ykCrfApp.requette.etat">Etat</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'ykCrfApp.EtatRequette.' + requette.etat}}">{{requette.etat}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.requette.composantValeur">Composant Valeur</span></dt>
+                <dd>
+                    <div *ngIf="requette.composantValeurId">
+                        <a [routerLink]="['/composant-valeur', requette.composantValeurId, 'view']">{{requette.composantValeurId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.requette.validationComposant">Validation Composant</span></dt>
+                <dd>
+                    <div *ngIf="requette.validationComposantId">
+                        <a [routerLink]="['/validation-composant', requette.validationComposantId, 'view']">{{requette.validationComposantId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/requette', requette.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+{
+    "name": "FichePatient",
+    "fields": [
+        {
+            "fieldName": "codePatient",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "oneDate",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "centre",
+            "otherEntityName": "centre",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "fichePatient"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "formulairePatient",
+            "otherEntityName": "formulairePatient",
+            "otherEntityRelationshipName": "fichePatient"
+        }
+    ],
+    "changelogDate": "20181121143227",
+    "entityTableName": "fiche_patient",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

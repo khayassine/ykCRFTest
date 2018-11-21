@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="etude">
+            <h2><span jhiTranslate="ykCrfApp.etude.detail.title">Etude</span> {{etude.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ykCrfApp.etude.code">Code</span></dt>
+                <dd>
+                    <span>{{etude.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.etude.titre">Titre</span></dt>
+                <dd>
+                    <span>{{etude.titre}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.etude.description">Description</span></dt>
+                <dd>
+                    <span>{{etude.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.etude.pageHtml">Page Html</span></dt>
+                <dd>
+                    <span>{{etude.pageHtml}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.etude.cssGlobal">Css Global</span></dt>
+                <dd>
+                    <span>{{etude.cssGlobal}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/etude', etude.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

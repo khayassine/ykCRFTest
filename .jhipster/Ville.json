@@ -1,0 +1,26 @@
+{
+    "name": "Ville",
+    "fields": [
+        {
+            "fieldName": "titre",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "region",
+            "otherEntityName": "region",
+            "otherEntityRelationshipName": "ville"
+        }
+    ],
+    "changelogDate": "20181121143231",
+    "entityTableName": "ville",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

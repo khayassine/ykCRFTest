@@ -1,0 +1,11 @@
+{
+    "ykCrfApp": {
+        "EtatFormulaire": {
+            "null": "",
+            "ND": "ND",
+            "COMPLETED": "COMPLETED",
+            "QUERIES": "QUERIES",
+            "SIGNED": "SIGNED"
+        }
+    }
+}

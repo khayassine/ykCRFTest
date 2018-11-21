@@ -1,0 +1,22 @@
+{
+    "ykCrfApp": {
+        "commentaireRequette": {
+            "home": {
+                "title": "Commentaire Requettes",
+                "createLabel": "Create a new Commentaire Requette",
+                "createOrEditLabel": "Create or edit a Commentaire Requette"
+            },
+            "created": "A new Commentaire Requette is created with identifier {{ param }}",
+            "updated": "A Commentaire Requette is updated with identifier {{ param }}",
+            "deleted": "A Commentaire Requette is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Commentaire Requette {{ id }}?"
+            },
+            "detail": {
+                "title": "Commentaire Requette"
+            },
+            "commentaire": "Commentaire",
+            "requette": "Requette"
+        }
+    }
+}

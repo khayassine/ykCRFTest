@@ -1,0 +1,23 @@
+{
+    "ykCrfApp": {
+        "typeComposant": {
+            "home": {
+                "title": "Type Composants",
+                "createLabel": "Create a new Type Composant",
+                "createOrEditLabel": "Create or edit a Type Composant"
+            },
+            "created": "A new Type Composant is created with identifier {{ param }}",
+            "updated": "A Type Composant is updated with identifier {{ param }}",
+            "deleted": "A Type Composant is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Type Composant {{ id }}?"
+            },
+            "detail": {
+                "title": "Type Composant"
+            },
+            "code": "Code",
+            "titre": "Titre",
+            "cssStyle": "Css Style"
+        }
+    }
+}

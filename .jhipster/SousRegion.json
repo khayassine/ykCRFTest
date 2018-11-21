@@ -1,0 +1,26 @@
+{
+    "name": "SousRegion",
+    "fields": [
+        {
+            "fieldName": "titre",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "region",
+            "otherEntityName": "region",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181121143233",
+    "entityTableName": "sous_region",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

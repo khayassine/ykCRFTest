@@ -1,0 +1,32 @@
+{
+    "name": "Region",
+    "fields": [
+        {
+            "fieldName": "titre",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "ville",
+            "otherEntityName": "ville",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "sousRegion",
+            "otherEntityName": "sousRegion",
+            "otherEntityRelationshipName": "region"
+        }
+    ],
+    "changelogDate": "20181121143232",
+    "entityTableName": "region",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

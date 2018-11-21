@@ -1,0 +1,24 @@
+{
+    "ykCrfApp": {
+        "composantValeur": {
+            "home": {
+                "title": "ComposantValeurs",
+                "createLabel": "Créer un nouveau Composant Valeur",
+                "createOrEditLabel": "Créer ou éditer un Composant Valeur"
+            },
+            "created": "Un nouveau Composant Valeur a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Composant Valeur avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Composant Valeur avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Composant Valeur {{ id }} ?"
+            },
+            "detail": {
+                "title": "Composant Valeur"
+            },
+            "valeur": "Valeur",
+            "etat": "Etat",
+            "formulairePatient": "Formulaire Patient",
+            "composantTemplate": "Composant Template"
+        }
+    }
+}

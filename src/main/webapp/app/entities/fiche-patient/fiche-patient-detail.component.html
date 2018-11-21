@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="fichePatient">
+            <h2><span jhiTranslate="ykCrfApp.fichePatient.detail.title">Fiche Patient</span> {{fichePatient.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ykCrfApp.fichePatient.codePatient">Code Patient</span></dt>
+                <dd>
+                    <span>{{fichePatient.codePatient}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.fichePatient.oneDate">One Date</span></dt>
+                <dd>
+                    <span>{{fichePatient.oneDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.fichePatient.centre">Centre</span></dt>
+                <dd>
+                    <div *ngIf="fichePatient.centreId">
+                        <a [routerLink]="['/centre', fichePatient.centreId, 'view']">{{fichePatient.centreId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/fiche-patient', fichePatient.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

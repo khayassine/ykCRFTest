@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-requette-heading" jhiTranslate="ykCrfApp.requette.home.createOrEditLabel">Create or edit a Requette</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!requette.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="requette.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.requette.etat" for="field_etat">Etat</label>
+                    <select class="form-control" name="etat" [(ngModel)]="requette.etat" id="field_etat" >
+                        <option value="COMMENTED">{{'ykCrfApp.EtatRequette.COMMENTED' | translate}}</option>
+                        <option value="RESOLVED">{{'ykCrfApp.EtatRequette.RESOLVED' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.requette.composantValeur" for="field_composantValeur">Composant Valeur</label>
+                    <select class="form-control" id="field_composantValeur" name="composantValeur" [(ngModel)]="requette.composantValeurId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="composantValeurOption.id" *ngFor="let composantValeurOption of composantvaleurs; trackBy: trackComposantValeurById">{{composantValeurOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.requette.validationComposant" for="field_validationComposant">Validation Composant</label>
+                    <select class="form-control" id="field_validationComposant" name="validationComposant" [(ngModel)]="requette.validationComposantId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="validationComposantOption.id" *ngFor="let validationComposantOption of validationcomposants; trackBy: trackValidationComposantById">{{validationComposantOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

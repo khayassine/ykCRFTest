@@ -1,0 +1,24 @@
+{
+    "ykCrfApp": {
+        "requette": {
+            "home": {
+                "title": "Requettes",
+                "createLabel": "Créer un nouveau Requette",
+                "createOrEditLabel": "Créer ou éditer un Requette"
+            },
+            "created": "Un nouveau Requette a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Requette avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Requette avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Requette {{ id }} ?"
+            },
+            "detail": {
+                "title": "Requette"
+            },
+            "etat": "Etat",
+            "composantValeur": "Composant Valeur",
+            "validationComposant": "Validation Composant",
+            "commentaireRequette": "Commentaire Requette"
+        }
+    }
+}

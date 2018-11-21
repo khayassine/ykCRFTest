@@ -8,6 +8,21 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entités",
+                "etude": "Etude",
+                "formulaireTemplate": "Formulaire Template",
+                "composantTemplate": "Composant Template",
+                "typeComposant": "Type Composant",
+                "validationComposant": "Validation Composant",
+                "regleValidation": "Regle Validation",
+                "requette": "Requette",
+                "commentaireRequette": "Commentaire Requette",
+                "fichePatient": "Fiche Patient",
+                "formulairePatient": "Formulaire Patient",
+                "composantValeur": "Composant Valeur",
+                "centre": "Centre",
+                "ville": "Ville",
+                "region": "Region",
+                "sousRegion": "Sous Region",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

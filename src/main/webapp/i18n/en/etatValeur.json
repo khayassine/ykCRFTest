@@ -1,0 +1,10 @@
+{
+    "ykCrfApp": {
+        "EtatValeur": {
+            "null": "",
+            "ND": "ND",
+            "COMPLETED": "COMPLETED",
+            "QUERIES": "QUERIES"
+        }
+    }
+}

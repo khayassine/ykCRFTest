@@ -1,0 +1,25 @@
+{
+    "ykCrfApp": {
+        "regleValidation": {
+            "home": {
+                "title": "RegleValidations",
+                "createLabel": "Créer un nouveau Regle Validation",
+                "createOrEditLabel": "Créer ou éditer un Regle Validation"
+            },
+            "created": "Un nouveau Regle Validation a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Regle Validation avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Regle Validation avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Regle Validation {{ id }} ?"
+            },
+            "detail": {
+                "title": "Regle Validation"
+            },
+            "code": "Code",
+            "titre": "Titre",
+            "regexValidation": "Regex Validation",
+            "signeComparaison": "Signe Comparaison",
+            "message": "Message"
+        }
+    }
+}

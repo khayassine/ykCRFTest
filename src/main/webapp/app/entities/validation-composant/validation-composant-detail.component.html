@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="validationComposant">
+            <h2><span jhiTranslate="ykCrfApp.validationComposant.detail.title">Validation Composant</span> {{validationComposant.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ykCrfApp.validationComposant.code">Code</span></dt>
+                <dd>
+                    <span>{{validationComposant.code}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.validationComposant.titre">Titre</span></dt>
+                <dd>
+                    <span>{{validationComposant.titre}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.validationComposant.regexValidation">Regex Validation</span></dt>
+                <dd>
+                    <span>{{validationComposant.regexValidation}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.validationComposant.signeComparaison">Signe Comparaison</span></dt>
+                <dd>
+                    <span>{{validationComposant.signeComparaison}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.validationComposant.valeurComparaison">Valeur Comparaison</span></dt>
+                <dd>
+                    <span>{{validationComposant.valeurComparaison}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.validationComposant.message">Message</span></dt>
+                <dd>
+                    <span>{{validationComposant.message}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.validationComposant.niveauValidation">Niveau Validation</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'ykCrfApp.NiveauValidation.' + validationComposant.niveauValidation}}">{{validationComposant.niveauValidation}}</span>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.validationComposant.composantTemplate">Composant Template</span></dt>
+                <dd>
+                    <div *ngIf="validationComposant.composantTemplateId">
+                        <a [routerLink]="['/composant-template', validationComposant.composantTemplateId, 'view']">{{validationComposant.composantTemplateId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ykCrfApp.validationComposant.regleValidation">Regle Validation</span></dt>
+                <dd>
+                    <div *ngIf="validationComposant.regleValidationId">
+                        <a [routerLink]="['/regle-validation', validationComposant.regleValidationId, 'view']">{{validationComposant.regleValidationId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/validation-composant', validationComposant.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

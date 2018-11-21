@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity ComposantTemplate.
+    -->
+    <changeSet id="20181121143221-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="formulaire_template_id"
+                                 baseTableName="composant_template"
+                                 constraintName="fk_composant_template_formulaire_template_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="formulaire_template"/>
+
+        <addForeignKeyConstraint baseColumnNames="type_composant_id"
+                                 baseTableName="composant_template"
+                                 constraintName="fk_composant_template_type_composant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="type_composant"/>
+
+        <addForeignKeyConstraint baseColumnNames="composant_template_id"
+                                 baseTableName="composant_template"
+                                 constraintName="fk_composant_template_composant_template_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="composant_template"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,24 @@
+{
+    "ykCrfApp": {
+        "formulaireTemplate": {
+            "home": {
+                "title": "FormulaireTemplates",
+                "createLabel": "Créer un nouveau Formulaire Template",
+                "createOrEditLabel": "Créer ou éditer un Formulaire Template"
+            },
+            "created": "Un nouveau Formulaire Template a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Formulaire Template avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Formulaire Template avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Formulaire Template {{ id }} ?"
+            },
+            "detail": {
+                "title": "Formulaire Template"
+            },
+            "code": "Code",
+            "titre": "Titre",
+            "version": "Version",
+            "composantTemplate": "Composant Template"
+        }
+    }
+}

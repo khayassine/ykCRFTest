@@ -1,0 +1,10 @@
+{
+    "ykCrfApp": {
+        "NiveauValidation": {
+            "null": "",
+            "WARNING": "WARNING",
+            "INFO": "INFO",
+            "ERROR": "ERROR"
+        }
+    }
+}

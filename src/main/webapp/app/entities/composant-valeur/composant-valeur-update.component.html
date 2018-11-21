@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-composant-valeur-heading" jhiTranslate="ykCrfApp.composantValeur.home.createOrEditLabel">Create or edit a Composant Valeur</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!composantValeur.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="composantValeur.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.composantValeur.valeur" for="field_valeur">Valeur</label>
+                    <input type="text" class="form-control" name="valeur" id="field_valeur"
+                        [(ngModel)]="composantValeur.valeur" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.composantValeur.etat" for="field_etat">Etat</label>
+                    <select class="form-control" name="etat" [(ngModel)]="composantValeur.etat" id="field_etat" >
+                        <option value="ND">{{'ykCrfApp.EtatValeur.ND' | translate}}</option>
+                        <option value="COMPLETED">{{'ykCrfApp.EtatValeur.COMPLETED' | translate}}</option>
+                        <option value="QUERIES">{{'ykCrfApp.EtatValeur.QUERIES' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.composantValeur.formulairePatient" for="field_formulairePatient">Formulaire Patient</label>
+                    <select class="form-control" id="field_formulairePatient" name="formulairePatient" [(ngModel)]="composantValeur.formulairePatientId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="formulairePatientOption.id" *ngFor="let formulairePatientOption of formulairepatients; trackBy: trackFormulairePatientById">{{formulairePatientOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ykCrfApp.composantValeur.composantTemplate" for="field_composantTemplate">Composant Template</label>
+                    <select class="form-control" id="field_composantTemplate" name="composantTemplate" [(ngModel)]="composantValeur.composantTemplateId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="composantTemplateOption.id" *ngFor="let composantTemplateOption of composanttemplates; trackBy: trackComposantTemplateById">{{composantTemplateOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

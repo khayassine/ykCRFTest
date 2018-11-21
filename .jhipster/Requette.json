@@ -1,0 +1,43 @@
+{
+    "name": "Requette",
+    "fields": [
+        {
+            "fieldName": "etat",
+            "fieldType": "EtatRequette",
+            "fieldValues": "COMMENTED,RESOLVED"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "composantValeur",
+            "otherEntityName": "composantValeur",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "requette"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "validationComposant",
+            "otherEntityName": "validationComposant",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "requette"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "commentaireRequette",
+            "otherEntityName": "commentaireRequette",
+            "otherEntityRelationshipName": "requette"
+        }
+    ],
+    "changelogDate": "20181121143225",
+    "entityTableName": "requette",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
